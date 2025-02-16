@@ -6,8 +6,7 @@ namespace a2
 {
     public partial class Form1 : Form
     {
-        private List<string> imagePaths; // Список шляхів до зображень
-        private int currentImageIndex = 0; // Поточний індекс зображення
+        
         public Form1()
         {
             InitializeComponent();
@@ -128,6 +127,8 @@ namespace a2
                 dateoutput.Text = "Date is in the past";
             }
         }
+        private List<string> imagePaths; // Список шляхів до зображень
+        private int currentImageIndex = 0; // Поточний індекс зображення
         private void LoadImages()
         {
             try
