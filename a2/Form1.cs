@@ -6,8 +6,6 @@ namespace a2
 {
     public partial class Form1 : Form
     {
-        private List<string> imagePaths; // Список шляхів до зображень
-        private int currentImageIndex = 0; // Поточний індекс зображення
         public Form1()
         {
             InitializeComponent();
@@ -128,6 +126,8 @@ namespace a2
                 dateoutput.Text = "Date is in the past";
             }
         }
+        private List<string> imagePaths;
+        private int currentImageIndex = 0;
         private void LoadImages()
         {
             try
@@ -157,18 +157,45 @@ namespace a2
 
         private void btnNext_Click_1(object sender, EventArgs e)
         {
-            if (imagePaths.Count == 0) return;
-
-            currentImageIndex = (currentImageIndex + 1) % imagePaths.Count;
+            currentImageIndex++;
+            if (currentImageIndex > imagePaths.Count-1)
+                currentImageIndex = 0;
             ShowCurrentImage();
         }
 
         private void btnPrevious_Click_1(object sender, EventArgs e)
         {
-            if (imagePaths.Count == 0) return;
-
-            currentImageIndex = (currentImageIndex - 1 + imagePaths.Count) % imagePaths.Count;
+            currentImageIndex--;
+            if (currentImageIndex < 0)
+                currentImageIndex = imagePaths.Count - 1;
             ShowCurrentImage();
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Select an Image";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    imagePaths.Add(openFileDialog.FileName);
+                    currentImageIndex = imagePaths.Count - 1;
+
+                    ShowCurrentImage();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 

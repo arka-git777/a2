@@ -36,6 +36,8 @@
             pictureBox1 = new PictureBox();
             btnNext = new Button();
             btnPrevious = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            btnOpenFile = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -87,6 +89,7 @@
             pictureBox1.Location = new Point(254, 210);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(221, 111);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -110,11 +113,27 @@
             btnPrevious.UseVisualStyleBackColor = true;
             btnPrevious.Click += btnPrevious_Click_1;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
+            // btnOpenFile
+            // 
+            btnOpenFile.Location = new Point(625, 353);
+            btnOpenFile.Name = "btnOpenFile";
+            btnOpenFile.Size = new Size(106, 67);
+            btnOpenFile.TabIndex = 8;
+            btnOpenFile.Text = "Add";
+            btnOpenFile.UseVisualStyleBackColor = true;
+            btnOpenFile.Click += btnOpenFile_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnOpenFile);
             Controls.Add(btnPrevious);
             Controls.Add(btnNext);
             Controls.Add(pictureBox1);
@@ -140,5 +159,7 @@
         private PictureBox pictureBox1;
         private Button btnNext;
         private Button btnPrevious;
+        private OpenFileDialog openFileDialog1;
+        private Button btnOpenFile;
     }
 }
