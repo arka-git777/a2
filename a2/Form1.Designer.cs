@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox1 = new TextBox();
             button1 = new Button();
             dateoutput = new Label();
@@ -38,6 +39,15 @@
             btnPrevious = new Button();
             openFileDialog1 = new OpenFileDialog();
             btnOpenFile = new Button();
+            btnAddURL = new Button();
+            textBox2 = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            lblQuestion = new Label();
+            btnSumbit = new Button();
+            btnRestart = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -128,11 +138,99 @@
             btnOpenFile.UseVisualStyleBackColor = true;
             btnOpenFile.Click += btnOpenFile_Click;
             // 
+            // btnAddURL
+            // 
+            btnAddURL.Location = new Point(471, 43);
+            btnAddURL.Name = "btnAddURL";
+            btnAddURL.Size = new Size(75, 23);
+            btnAddURL.TabIndex = 9;
+            btnAddURL.Text = "Add";
+            btnAddURL.UseVisualStyleBackColor = true;
+            btnAddURL.Click += btnAddURL_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(216, 43);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(249, 23);
+            textBox2.TabIndex = 10;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(103, 466);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(14, 13);
+            radioButton1.TabIndex = 11;
+            radioButton1.TabStop = true;
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(103, 491);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(14, 13);
+            radioButton2.TabIndex = 12;
+            radioButton2.TabStop = true;
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(103, 517);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(14, 13);
+            radioButton3.TabIndex = 13;
+            radioButton3.TabStop = true;
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // lblQuestion
+            // 
+            lblQuestion.AutoSize = true;
+            lblQuestion.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQuestion.Location = new Point(103, 438);
+            lblQuestion.Name = "lblQuestion";
+            lblQuestion.Size = new Size(0, 19);
+            lblQuestion.TabIndex = 14;
+            // 
+            // btnSumbit
+            // 
+            btnSumbit.Location = new Point(124, 538);
+            btnSumbit.Name = "btnSumbit";
+            btnSumbit.Size = new Size(75, 23);
+            btnSumbit.TabIndex = 15;
+            btnSumbit.Text = "submit";
+            btnSumbit.UseVisualStyleBackColor = true;
+            btnSumbit.Click += btnSumbit_Click;
+            // 
+            // btnRestart
+            // 
+            btnRestart.Location = new Point(205, 538);
+            btnRestart.Name = "btnRestart";
+            btnRestart.Size = new Size(75, 23);
+            btnRestart.TabIndex = 16;
+            btnRestart.Text = "restart";
+            btnRestart.UseVisualStyleBackColor = true;
+            btnRestart.Click += btnRestart_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 698);
+            Controls.Add(btnRestart);
+            Controls.Add(btnSumbit);
+            Controls.Add(lblQuestion);
+            Controls.Add(radioButton3);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(textBox2);
+            Controls.Add(btnAddURL);
             Controls.Add(btnOpenFile);
             Controls.Add(btnPrevious);
             Controls.Add(btnNext);
@@ -161,5 +259,14 @@
         private Button btnPrevious;
         private OpenFileDialog openFileDialog1;
         private Button btnOpenFile;
+        private Button btnAddURL;
+        private TextBox textBox2;
+        private System.Windows.Forms.Timer timer1;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        private Label lblQuestion;
+        private Button btnSumbit;
+        private Button btnRestart;
     }
 }
