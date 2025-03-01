@@ -222,7 +222,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 698);
+            ClientSize = new Size(791, 606);
             Controls.Add(btnRestart);
             Controls.Add(btnSumbit);
             Controls.Add(lblQuestion);
