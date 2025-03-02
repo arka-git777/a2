@@ -140,7 +140,7 @@
             // 
             // btnAddURL
             // 
-            btnAddURL.Location = new Point(471, 43);
+            btnAddURL.Location = new Point(460, 156);
             btnAddURL.Name = "btnAddURL";
             btnAddURL.Size = new Size(75, 23);
             btnAddURL.TabIndex = 9;
@@ -150,7 +150,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(216, 43);
+            textBox2.Location = new Point(205, 156);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(249, 23);
             textBox2.TabIndex = 10;
