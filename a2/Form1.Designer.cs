@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBox1 = new TextBox();
             button1 = new Button();
             dateoutput = new Label();
@@ -48,7 +49,16 @@
             lblQuestion = new Label();
             btnSumbit = new Button();
             btnRestart = new Button();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            toolStripProgressBar1 = new ToolStripProgressBar();
+            toolStripDropDownButton1 = new ToolStripDropDownButton();
+            toolStripSplitButton1 = new ToolStripSplitButton();
+            stopToolStripMenuItem = new ToolStripMenuItem();
+            stsrtToolStripMenuItem = new ToolStripMenuItem();
+            btnShow = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // textBox1
@@ -157,7 +167,8 @@
             // 
             // timer1
             // 
-            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // radioButton1
             // 
@@ -218,11 +229,78 @@
             btnRestart.UseVisualStyleBackColor = true;
             btnRestart.Click += btnRestart_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripProgressBar1, toolStripDropDownButton1, toolStripSplitButton1 });
+            statusStrip1.Location = new Point(0, 634);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(791, 22);
+            statusStrip1.TabIndex = 17;
+            statusStrip1.Text = "statusStrip1";
+            statusStrip1.Visible = false;
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(52, 17);
+            toolStripStatusLabel1.Text = "progress";
+            // 
+            // toolStripProgressBar1
+            // 
+            toolStripProgressBar1.Name = "toolStripProgressBar1";
+            toolStripProgressBar1.Size = new Size(100, 16);
+            // 
+            // toolStripDropDownButton1
+            // 
+            toolStripDropDownButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripDropDownButton1.Image = (Image)resources.GetObject("toolStripDropDownButton1.Image");
+            toolStripDropDownButton1.ImageTransparentColor = Color.Magenta;
+            toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            toolStripDropDownButton1.Size = new Size(29, 20);
+            toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            toolStripDropDownButton1.Click += toolStripDropDownButton1_Click;
+            // 
+            // toolStripSplitButton1
+            // 
+            toolStripSplitButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripSplitButton1.DropDownItems.AddRange(new ToolStripItem[] { stopToolStripMenuItem, stsrtToolStripMenuItem });
+            toolStripSplitButton1.Image = (Image)resources.GetObject("toolStripSplitButton1.Image");
+            toolStripSplitButton1.ImageTransparentColor = Color.Magenta;
+            toolStripSplitButton1.Name = "toolStripSplitButton1";
+            toolStripSplitButton1.Size = new Size(32, 20);
+            toolStripSplitButton1.Text = "toolStripSplitButton1";
+            // 
+            // stopToolStripMenuItem
+            // 
+            stopToolStripMenuItem.Name = "stopToolStripMenuItem";
+            stopToolStripMenuItem.Size = new Size(180, 22);
+            stopToolStripMenuItem.Text = "stop";
+            stopToolStripMenuItem.Click += stopToolStripMenuItem_Click;
+            // 
+            // stsrtToolStripMenuItem
+            // 
+            stsrtToolStripMenuItem.Name = "stsrtToolStripMenuItem";
+            stsrtToolStripMenuItem.Size = new Size(180, 22);
+            stsrtToolStripMenuItem.Text = "continue";
+            stsrtToolStripMenuItem.Click += stsrtToolStripMenuItem_Click;
+            // 
+            // btnShow
+            // 
+            btnShow.Location = new Point(628, 586);
+            btnShow.Name = "btnShow";
+            btnShow.Size = new Size(75, 23);
+            btnShow.TabIndex = 18;
+            btnShow.Text = "show";
+            btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShow_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(791, 606);
+            ClientSize = new Size(791, 656);
+            Controls.Add(btnShow);
+            Controls.Add(statusStrip1);
             Controls.Add(btnRestart);
             Controls.Add(btnSumbit);
             Controls.Add(lblQuestion);
@@ -243,6 +321,8 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,5 +348,13 @@
         private Label lblQuestion;
         private Button btnSumbit;
         private Button btnRestart;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripProgressBar toolStripProgressBar1;
+        private ToolStripDropDownButton toolStripDropDownButton1;
+        private Button btnShow;
+        private ToolStripSplitButton toolStripSplitButton1;
+        private ToolStripMenuItem stopToolStripMenuItem;
+        private ToolStripMenuItem stsrtToolStripMenuItem;
     }
 }

@@ -21,6 +21,7 @@ namespace a2
             ShowCurrentImage();
             questions = File.ReadAllLines("questions.txt");
             DisplayQuestion();
+            timer1.Stop();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -229,7 +230,7 @@ namespace a2
                     Random rng = new Random();
                     for (int i = answers.Count - 1; i > 0; i--)
                     {
-                        int j = rng.Next(i + 1); 
+                        int j = rng.Next(i + 1);
                         string temp = answers[i];
                         answers[i] = answers[j];
                         answers[j] = temp;
@@ -237,7 +238,7 @@ namespace a2
                     radioButton1.Text = answers[0];
                     radioButton2.Text = answers[1];
                     radioButton3.Text = answers[2];
-                    
+
 
                     radioButton1.Checked = false;
                     radioButton2.Checked = false;
@@ -278,10 +279,10 @@ namespace a2
             CheckQuestion();
             currentQuestion++;
             DisplayQuestion();
-            if(currentQuestion == questions.Length/4)
+            if (currentQuestion == questions.Length / 4)
             {
                 currentQuestion = 0;
-                DisplayQuestion(); 
+                DisplayQuestion();
             }
         }
 
@@ -289,6 +290,45 @@ namespace a2
         {
             currentQuestion = 0;
             DisplayQuestion();
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = true;
+            toolStripProgressBar1.Value = 0;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (toolStripProgressBar1.Value < toolStripProgressBar1.Maximum)
+                toolStripProgressBar1.Value++;
+            else
+            {
+                timer1.Stop();
+                var a = MessageBox.Show("Loading finshed", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (a == DialogResult.OK)
+                    statusStrip1.Visible = false;
+            }
+
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled)
+                timer1.Stop();
+            else
+                timer1.Start();
+        }
+
+        private void stsrtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
 
