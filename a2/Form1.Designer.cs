@@ -282,7 +282,7 @@
             stsrtToolStripMenuItem.Name = "stsrtToolStripMenuItem";
             stsrtToolStripMenuItem.Size = new Size(180, 22);
             stsrtToolStripMenuItem.Text = "continue";
-            stsrtToolStripMenuItem.Click += stsrtToolStripMenuItem_Click;
+            stsrtToolStripMenuItem.Click += startToolStripMenuItem_Click;
             // 
             // btnShow
             // 

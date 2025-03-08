@@ -321,7 +321,7 @@ namespace a2
                 timer1.Start();
         }
 
-        private void stsrtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Start();
         }
