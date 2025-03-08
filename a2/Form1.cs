@@ -21,7 +21,6 @@ namespace a2
             ShowCurrentImage();
             questions = File.ReadAllLines("questions.txt");
             DisplayQuestion();
-            timer1.Stop();
         }
 
         private void button1_Click(object sender, EventArgs e)

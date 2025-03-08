@@ -167,7 +167,6 @@
             // 
             // timer1
             // 
-            timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
             // radioButton1
@@ -273,14 +272,14 @@
             // stopToolStripMenuItem
             // 
             stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            stopToolStripMenuItem.Size = new Size(180, 22);
+            stopToolStripMenuItem.Size = new Size(121, 22);
             stopToolStripMenuItem.Text = "stop";
             stopToolStripMenuItem.Click += stopToolStripMenuItem_Click;
             // 
             // stsrtToolStripMenuItem
             // 
             stsrtToolStripMenuItem.Name = "stsrtToolStripMenuItem";
-            stsrtToolStripMenuItem.Size = new Size(180, 22);
+            stsrtToolStripMenuItem.Size = new Size(121, 22);
             stsrtToolStripMenuItem.Text = "continue";
             stsrtToolStripMenuItem.Click += startToolStripMenuItem_Click;
             // 
