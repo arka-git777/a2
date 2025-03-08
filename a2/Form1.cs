@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace a2
 {
@@ -8,7 +8,7 @@ namespace a2
         private List<string> imagePaths;
         private int currentImageIndex = 0;
 
-        private string[] questions;
+        private List<string> questions = new List<string>(File.ReadAllLines("questions.txt"));
         private int currentQuestion = 0;
         private int score = 0;
         private string correctAnswer = "";
@@ -17,7 +17,6 @@ namespace a2
             InitializeComponent();
             LoadImages();
             ShowCurrentImage();
-            questions = File.ReadAllLines("questions.txt");
             DisplayQuestion();
         }
 
@@ -214,11 +213,11 @@ namespace a2
 
         private void DisplayQuestion()
         {
-            if (currentQuestion < questions.Length / 4)
+            if (currentQuestion < questions.Count / 4)
             {
                 int index = currentQuestion * 4;
 
-                if (index + 3 <= questions.Length)
+                if (index + 3 <= questions.Count)
                 {
                     lblQuestion.Text = questions[index];
                     correctAnswer = questions[index + 2];
@@ -247,7 +246,7 @@ namespace a2
                 }
             }
             else
-                MessageBox.Show($"Quiz completed!\nYour score: {score}/{questions.Length / 4}");
+                MessageBox.Show($"Quiz completed!\nYour score: {score}/{questions.Count / 4}");
 
         }
 
@@ -276,7 +275,7 @@ namespace a2
             CheckQuestion();
             currentQuestion++;
             DisplayQuestion();
-            if (currentQuestion == questions.Length / 4)
+            if (currentQuestion == questions.Count / 4)
             {
                 currentQuestion = 0;
                 DisplayQuestion();
@@ -326,6 +325,17 @@ namespace a2
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void btnAddQuestions_Click(object sender, EventArgs e)
+        {
+            questions.Add(textBox3.Text);
+            textBox3.Text = "";
+        }
+
+        private void btnAddTestToFile_Click(object sender, EventArgs e)
+        {
+            File.WriteAllLines("questions.txt", questions);
         }
     }
 
